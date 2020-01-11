@@ -1,0 +1,22 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de notícias",
+  "main": "Untitled-2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliessantiago/site_noticias.git"
+  },
+  "author": "Julie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliessantiago/site_noticias/issues"
+  },
+  "homepage": "https://github.com/juliessantiago/site_noticias#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
