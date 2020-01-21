@@ -10,4 +10,10 @@ var app = express(); //Chamando a função acima
 
 app.set ('view engine', 'ejs'); /*Indicando que as views (códigos HTML)vão ser geradas pelo EJS*/ 
 
+//Por default as views vão ser procuradas no diretório princial (curso_node), mas agora que elas
+//estão dentro da pasta App, é necessário indicar onde o EJS vai buscá-las 
+
+app.set ('views', './app/views'); //Por que colocar o caminho a partir da raíz? pq o objeto app 
+//está sendo incluído em app.js (como um módulo)
+
 module.exports = app; 
