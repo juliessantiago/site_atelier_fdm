@@ -1,9 +1,8 @@
 /*Arquivo de definição de rota*/ 
 
-let funcao_conexao = require ('../../config/connection'); //recuperando a função criada no connection
+let funcao_conexao = require ('../../config/connection'); //recuperando a função
 
-let conexao = funcao_conexao(); /*chamando a funçao - ESSA VARIAVEL QUE RECEBE O RETORNO DEVE
-SER A MESMA USADA NA QUERY*/ 
+let conexao = funcao_conexao(); /*chamando a funçao que foi criada no modulo*/ 
 
 module.exports = function (app){ 
 
