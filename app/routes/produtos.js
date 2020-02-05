@@ -1,20 +1,20 @@
+/*Arquivo de definição de rota*/ 
+
+let funcao_conexao = require ('../../config/connection'); //recuperando a função criada no connection
+
+let conexao = funcao_conexao(); /*chamando a funçao - ESSA VARIAVEL QUE RECEBE O RETORNO DEVE
+SER A MESMA USADA NA QUERY*/ 
+
 module.exports = function (app){ 
 
 app.get ('/produtos', function(request, response){    
-        let mysql = require ('mysql'); //módulo já instalado
-
-        let conexao = mysql.createConnection ({     
-            host : 'localhost', //parâmetros são passados como estrutura JSON
-            user: 'root', 
-            password: '1234', 
-            database: 'atelier'
-        })
-
+        
         conexao.query('select * from posts', function(error, result){ //dois parametros: erro e resultado  
             //após a consulta em si, passamos uma função de callback 
-            //response.render('produtos/produtos.ejs', {posts : result}) 
-            response.send(result); 
-            
+            response.send(result); //mostra os resuultados direto no html  
+           //response.render('produtos/produtos.ejs', {posts : result})//deixa a visualização a cargo do EJS
+            //cria um JSON com um rótulo ("posts") 
+
         }); 
     })
 }

@@ -7,10 +7,10 @@
 	<body>
 
 		<table>
-			<% for (let i=0; i< posts.length; i++) { %> 
-				<td>ID</td>
-				<td>Titulo</td> 
-				<td>Conteúdo</td>
+			<% for (let i=0; i< posts.length; i++) { %> <!--POSTS é a varíavel criada dentro do JSON na função de callback--> 
+				<td>ID: <% posts[i].id_post %></td>
+				<td>Titulo: <% posts[i].titulo %></td> 
+				<td>Conteúdo <% posts[i].texto %> </td>
 			<% } %> 
 			
 	</table> 
