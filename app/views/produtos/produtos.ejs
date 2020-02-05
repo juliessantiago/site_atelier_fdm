@@ -2,11 +2,18 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Portal de not�cias</title>
+			<title>Produtos</title>
 		</head>
 	<body>
 
-		<h1>Produtos</h1>
+		<table>
+			<% for (let i=0; i< posts.length; i++) { %> 
+				<td>ID</td>
+				<td>Titulo</td> 
+				<td>Conteúdo</td>
+			<% } %> 
+			
+	</table> 
 
 	</body>
 </html>
