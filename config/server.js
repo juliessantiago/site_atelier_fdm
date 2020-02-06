@@ -17,6 +17,9 @@ app.set ('view engine', 'ejs'); /*Indicando que as views (códigos HTML)vão ser
 app.set ('views', './app/views'); //Por que colocar o caminho a partir da raíz? pq o objeto app 
 //está sendo incluído em app.js (como um módulo)
 
-consign().include('app/routes').into(app) //include - informa qual é o diretório que quero incluir na aplicação; into - onde colocar esses módulos 
+consign()
+.include('app/routes')
+.then('config/connection.js')//aqui é necessário mostrar a extensão  
+.into(app) //include - informa qual é o diretório que quero incluir na aplicação; into - onde colocar esses módulos 
 
-module.exports = app; 
+module.exports = app; //exportando app 

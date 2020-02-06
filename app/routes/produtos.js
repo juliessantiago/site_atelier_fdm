@@ -2,11 +2,13 @@
 
 let funcao_conexao = require ('../../config/connection'); //recuperando a função
 
-let conexao = funcao_conexao(); /*chamando a funçao que foi criada no modulo*/ 
+
 
 module.exports = function (app){ 
 
 app.get ('/produtos', function(request, response){    
+
+    let conexao = app.config.connection() //recuperando a função criada dentro da variável app - passada por parametro 
         
         conexao.query('select * from posts', function(error, result){ //dois parametros: erro e resultado  
             //após a consulta em si, passamos uma função de callback 
