@@ -2,17 +2,20 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
+			<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 			<title>Produtos</title>
 		</head>
 	<body>
 
 		<table>
-			<% for (let i=0; i< posts.length; i++) { %> <!--POSTS é a varíavel criada dentro do JSON na função de callback--> 
-				<td>ID: <% posts[i].id_post %></td>
-				<td>Titulo: <% posts[i].titulo %></td> 
-				<td>Conteúdo <% posts[i].texto %> </td>
-			<% } %> 
-			
+			<tr>
+				<% for (let i=0; i< posts.length; i++) { %> <!--POSTS é a varíavel criada dentro do JSON na função de callback--> 
+					<td>ID: <% posts[i].id_post %></td>
+					<td>Titulo: <% posts[i].titulo %></td> 
+					<td>Conteúdo <% posts[i].texto %> </td>
+				<% } %> 
+			</tr>
+		
 	</table> 
 
 	</body>

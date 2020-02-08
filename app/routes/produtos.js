@@ -1,22 +1,16 @@
-/*Arquivo de definição de rota*/ 
+module.exports = function (app) {
+	app.get ('/produtos', function (require, response){
 
-let funcao_conexao = require ('../../config/connection'); //recuperando a função
-
-
-
-module.exports = function (app){ 
-
-app.get ('/produtos', function(request, response){    
-
-    let conexao = app.config.connection() //recuperando a função criada dentro da variável app - passada por parametro 
+        let conexao = app.config.connection 
         
-        conexao.query('select * from posts', function(error, result){ //dois parametros: erro e resultado  
-            //após a consulta em si, passamos uma função de callback 
-            response.send(result); //mostra os resuultados direto no html  
-           //response.render('produtos/produtos.ejs', {posts : result})//deixa a visualização a cargo do EJS
-            //cria um JSON com um rótulo ("posts") 
+        let produtosModel = app.app.models.produtosModel 
+        
+		produtosModel.getProdutos (conexao, function (error, result){
+            response.send (result) 
+            //método .render não está funcionando - possível problema do EJS 
 
-        }); 
-    })
-}
-
+        })//getProdutos 
+        
+    }) //app.get 
+    
+}//módulo 

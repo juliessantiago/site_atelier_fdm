@@ -20,6 +20,7 @@ app.set ('views', './app/views'); //Por que colocar o caminho a partir da raíz?
 consign()
 .include('app/routes')
 .then('config/connection.js')//aqui é necessário mostrar a extensão  
+.then ('app/models')
 .into(app) //include - informa qual é o diretório que quero incluir na aplicação; into - onde colocar esses módulos 
 
 module.exports = app; //exportando app 
