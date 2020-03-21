@@ -5,9 +5,9 @@ module.exports = function(app){
         var connection = app.config.dbConnection();
 
         connection.query("SELECT * FROM POSTS", function(error, result){
-            //res.render('noticias/noticias', { posts : result });
+            res.render('noticias/noticias', { posts : result });
             //res.send (result);
-            res.send(error) 
+            //res.send(error) 
         });
 
     });

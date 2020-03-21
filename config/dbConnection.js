@@ -12,5 +12,5 @@ var connMySQL = function(){
 
 module.exports = function(){
     console.log('Módulo de conexão foi carregado');
-    return connMySQL;
-}
+    return connMySQL; 
+} 
