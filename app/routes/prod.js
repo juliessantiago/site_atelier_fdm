@@ -8,7 +8,7 @@ module.exports = function (app){
 
 app.get ('/prod', function(request, response){    
 
-    let conexao = app.config.connection() //recuperando a função criada dentro da variável app - passada por parametro 
+    var conexao = app.config.connection();  //recuperando a função criada dentro da variável app - passada por parametro 
         
         conexao.query('select * from posts where id_post = 1', function(error, result){ //dois parametros: erro e resultado  
             //após a consulta em si, passamos uma função de callback 

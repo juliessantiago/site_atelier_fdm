@@ -4,8 +4,8 @@ let exportaConexao = function (){ //função que conecta no banco de dados
     
     return mysql.createConnection ({     
         host : 'localhost', //parâmetros são passados como estrutura JSON
-        user: 'root', 
-        password: '1234', 
+        user: 'julie', 
+        password: '12345', 
         database: 'atelier'
     })
 }

@@ -1,7 +1,5 @@
-let app = require ('./config/server')//módulo que contém as configurações do servidor 
+var app = require('./config/server');
 
-app.listen(4000, function(){
-    console.log ('Server On'); 
-}); 
-
-
+app.listen(3000, function(){
+    console.log("Servidor ON");
+});
