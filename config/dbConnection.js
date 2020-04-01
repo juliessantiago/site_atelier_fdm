@@ -1,7 +1,7 @@
 var mysql = require('mysql'); //Módulos do mysql 
 
 module.exports = function(){
-    console.log('Conexão com banco de dados ok');
+    console.log('Módulo de conexão com SQL carregado com sucesso');
     
     return mysql.createConnection({
         host: 'localhost',

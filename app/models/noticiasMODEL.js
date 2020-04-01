@@ -1,5 +1,4 @@
 //Models representam entidades do banco de dados 
-//Cada model possuirá a consulta a uma tabela 
 
 module.exports = function (){
 
@@ -10,6 +9,11 @@ module.exports = function (){
     
     this.umaNoticia = function(connection, callback){
         connection.query ('SELECT * FROM POSTS WHERE ID_POST = 1', callback); 
+    }
+
+    this.salvaNoticia = function(posts, connection, callback){
+        connection.query ('INSERT INTO POSTS SET ?', posts, callback) //sql permite inserção usando método SET
+        //O módulo vai transformar o JSON em strings para inserir no banco
     }
     
     return this;  
