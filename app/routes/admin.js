@@ -12,7 +12,7 @@
          /*Função para salvar o novo post: */ 
          var dbConnection = require ('../../config/dbConnection.js'); //recuperando a funcao de conexao
             var connection = dbConnection(); //chamando a funcao de conexao 
-            var model_noticias = aplicacao.app.models.noticiasMODEL; //Acessando o módulo noticiasMODEL; 
+            var model_noticias = new aplicacao.app.models.NoticiasDAO; //Acessando o módulo noticiasMODEL; 
             model_noticias.salvarNoticia(posts, connection, function(error, result){//recuperando a funcao dentro do módulo noticiasMODEL
             //é preciso passar a conexão e a função de callback como parâmetros 
             //resposta.render('noticias/noticias.ejs', { posts : result });

@@ -7,7 +7,7 @@ module.exports = function(aplicacao){ /*mudei o nome aqui, mas é a mesma variá
 
         var connection = dbConnection(); //chamando a funcao de conexao 
 
-        var model_noticias = aplicacao.app.models.noticiasMODEL; //Acessando o módulo noticiasMODEL; 
+        var model_noticias = aplicacao.app.models.NoticiaDAO; //Acessando o módulo noticiasMODEL; 
 
         model_noticias.umaNoticia(connection, function(error, result){//recuperando a funcao dentro do módulo noticiasMODEL
             //é preciso passar a conexão e a função de callback como parâmetros 
