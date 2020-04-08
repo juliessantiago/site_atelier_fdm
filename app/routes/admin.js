@@ -8,6 +8,17 @@
         var posts = requisicao.body ; 
         //Express consegue recuperar informações do formulario (quando usamos método POST)
         //Mas, para isso é necessário o módulo body-parser 
+
+        requisicao.assert('titulo', 'O título é obrigatório').notEmpty(); 
+        //assert, notEmpty = express validator 
+
+        var erros = requisicao.validationErrors();
+
+        if (erros){
+            resposta.render ('admin/form_add_noticia')
+            console.log ('Dados obrigatórios não foram informados')
+            return; //retorna vazio, processo é parado aqui 
+        }
          
          /*Função para salvar o novo post: */ 
          var dbConnection = require ('../../config/dbConnection.js'); //recuperando a funcao de conexao
