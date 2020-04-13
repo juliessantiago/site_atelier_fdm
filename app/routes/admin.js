@@ -13,10 +13,12 @@
         //assert, notEmpty = express validator 
 
         var erros = requisicao.validationErrors();
+        //a versão mais recente do Node sugere usar: getValidationResult()
+        //validationErrors não é mais usado 
 
         if (erros){
-            resposta.render ('admin/form_add_noticia')
-            console.log ('Dados obrigatórios não foram informados')
+            resposta.render ('admin/form_add_noticia', {validacao: erros}) //Segundo parâmetro do render é um JSON
+            console.log (erros)
             return; //retorna vazio, processo é parado aqui 
         }
          
@@ -35,7 +37,8 @@
             //resposta.send (result);
 
             //RESULT - o que exatamente o result mostra? 
-            //resposta.send(error) 
+            //resposta.send(error)  
+             
         }); 
      })
  }
