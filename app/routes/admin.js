@@ -13,12 +13,10 @@
         //assert, notEmpty = express validator 
 
         var erros = requisicao.validationErrors();
-        //a versão mais recente do Node sugere usar: getValidationResult()
-        //validationErrors não é mais usado 
-
+        
         if (erros){
-            resposta.render ('admin/form_add_noticia', {validacao: erros}) //Segundo parâmetro do render é um JSON
-            console.log (erros)
+            resposta.render('admin/form_add_noticia.ejs', {notificacao : erros}) //Segundo parâmetro do render é um JSON
+            
             return; //retorna vazio, processo é parado aqui 
         }
          
@@ -32,11 +30,9 @@
 
             //no render, toda vez que o user apertar f5, os dados vão ser enviados de novo
             
-            resposta.redirect('/noticias'); 
+            resposta.redirect('/noticias');  
 
             //resposta.send (result);
-
-            //RESULT - o que exatamente o result mostra? 
             //resposta.send(error)  
              
         }); 
