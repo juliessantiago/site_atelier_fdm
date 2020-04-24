@@ -10,12 +10,12 @@ NoticiasDAO.prototype.pegaNoticias = function(connection, callback){
     connection.query('SELECT * FROM POSTS', callback);
 }
 
-NoticiasDAO.prototype.umaNoticia = function(connection, callback){
-    connection.query('SELECT * FROM POSTS WHERE ID_POST = 2', callback); 
-}
-
 NoticiasDAO.prototype.salvarNoticia = function(posts, connection, callback){
     connection.query('INSERT INTO POSTS SET ?', posts, callback)
+}
+
+NoticiasDAO.prototype.mostraUma = function(posts, connection, callback){
+    connection.query('SELECT * FROM POSTS WHERE ID_POST = 2', callback)
 }
 
 module.exports = function(){

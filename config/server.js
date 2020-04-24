@@ -15,6 +15,7 @@ consign()
     .include('app/routes') //Carrega automaticamente todas as rotas 
     .then('config/dbConnection.js')
     .then('app/models') //Carrega automaticamente todos os models 
+    .then('app/controllers')//carrega automaticamente os controllers 
     .into(app);
 
 module.exports = app;
