@@ -6,7 +6,7 @@ function NoticiasDAO(){
 }
 //DAO = DATA OBJETCT ACCESS = objeto de acesso a dados 
 
-NoticiasDAO.prototype.pegaNoticias = function(connection, callback){
+NoticiasDAO.prototype.buscaNoticias = function(connection, callback){
     connection.query('SELECT * FROM POSTS', callback);
 }
 
@@ -16,6 +16,10 @@ NoticiasDAO.prototype.salvarNoticia = function(posts, connection, callback){
 
 NoticiasDAO.prototype.mostraUma = function(posts, connection, callback){
     connection.query('SELECT * FROM POSTS WHERE ID_POST = 2', callback)
+}
+
+NoticiasDAO.prototype.getLast5 = function(connection, callback){
+    connection.query('SELECT * FROM POSTS ORDER BY DATA_CRIACAO DESC LIMIT 5',callback)
 }
 
 module.exports = function(){
