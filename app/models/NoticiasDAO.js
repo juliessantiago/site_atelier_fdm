@@ -11,6 +11,7 @@ NoticiasDAO.prototype.buscaNoticias = function(connection, callback){
 }
 
 NoticiasDAO.prototype.salvarNoticia = function(posts, connection, callback){
+     
     connection.query('INSERT INTO POSTS SET ?', posts, callback)
 }
 

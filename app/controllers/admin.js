@@ -17,7 +17,7 @@ module.exports.noticias_salvar = function (aplicacao, requisicao, resposta){
      
      if (erros){
          resposta.render('admin/form_add_noticia.ejs', {validacao : erros}) //Segundo parâmetro do render é um JSON
-         //Bug no reconhecimento do JSON com os erros 
+         
          return; //retorna vazio, processo é parado aqui 
      }
       
